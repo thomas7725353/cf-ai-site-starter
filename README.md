@@ -25,21 +25,30 @@ npm run dev
 
 ## Cloudflare Setup
 
-Create resources once, then update `wrangler.toml` IDs:
+Fast path:
+
+```bash
+npx wrangler login
+export CLOUDFLARE_ACCOUNT_ID=your-account-id
+export CLOUDFLARE_API_TOKEN=your-deploy-token
+./scripts/bootstrap-cloudflare.sh
+git add wrangler.toml
+git commit -m "chore: bind cloudflare resources"
+git push
+```
+
+Manual path:
 
 ```bash
 npx wrangler login
 npx wrangler d1 create cf_ai_site_db
+npx wrangler d1 create cf_ai_site_db_preview
 npx wrangler kv namespace create CF_AI_SITE_KV
+npx wrangler kv namespace create CF_AI_SITE_KV_PREVIEW
 npx wrangler r2 bucket create cf-ai-site-assets
+npx wrangler r2 bucket create cf-ai-site-assets-preview
 npx wrangler d1 migrations apply cf_ai_site_db --remote
-```
-
-Add GitHub repository secrets:
-
-```bash
-gh secret set CLOUDFLARE_ACCOUNT_ID
-gh secret set CLOUDFLARE_API_TOKEN
+npx wrangler d1 migrations apply cf_ai_site_db_preview --remote
 ```
 
 The API token should be scoped to the smallest Cloudflare account permissions needed for Workers, Pages, D1, KV, and R2 deployment.
