@@ -1,0 +1,26 @@
+# cf-ai-site-starter
+
+This repository is an AI-friendly Cloudflare full-stack starter.
+
+## Modules
+
+- `app/frontend`: Vite TypeScript frontend for Cloudflare Pages.
+- `app/worker`: Cloudflare Workers API.
+- `migrations`: D1 SQL migrations.
+- `.github/workflows`: CI, preview, and production deployment.
+- `docs/runbooks`: operational procedures.
+
+## Common Commands
+
+```bash
+npm install
+npm run typecheck
+npm test
+npm run build
+npm run dev
+npm run cf:migrate:local
+```
+
+## Operating Boundary
+
+Agents may propose and test changes locally. Production Cloudflare mutations, remote migrations, DNS changes, and credential rotation need explicit human approval.
