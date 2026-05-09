@@ -49,6 +49,10 @@ bucket_name = "cf-ai-site-assets-preview"
 name = "cf-ai-site-starter-api"
 vars = { APP_ENV = "production", TURNSTILE_SITE_KEY = "" }
 
+[[env.production.routes]]
+pattern = "blog.gorustai.com"
+custom_domain = true
+
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "cf_ai_site_db"
