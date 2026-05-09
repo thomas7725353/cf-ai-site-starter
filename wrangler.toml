@@ -2,7 +2,7 @@ name = "cf-ai-site-starter-api"
 main = "app/worker/src/index.ts"
 compatibility_date = "2026-05-09"
 compatibility_flags = ["nodejs_compat"]
-account_id = ""
+account_id = "ad59371c9ca78f9556cb6a91a3fa7d0d"
 
 [assets]
 directory = "app/frontend/dist"
@@ -16,12 +16,12 @@ TURNSTILE_SITE_KEY = ""
 [[d1_databases]]
 binding = "DB"
 database_name = "cf_ai_site_db"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "389d0759-f92e-4433-9863-a3876c0b0042"
 migrations_dir = "migrations"
 
 [[kv_namespaces]]
 binding = "CONFIG"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "324f4a63c0d646fc93fa6d82bdeb82bb"
 
 [[r2_buckets]]
 binding = "FILES"
@@ -34,12 +34,12 @@ vars = { APP_ENV = "preview", TURNSTILE_SITE_KEY = "" }
 [[env.preview.d1_databases]]
 binding = "DB"
 database_name = "cf_ai_site_db_preview"
-database_id = "REPLACE_WITH_PREVIEW_D1_DATABASE_ID"
+database_id = "f728e21b-de58-4cfe-810e-ecc54415636b"
 migrations_dir = "migrations"
 
 [[env.preview.kv_namespaces]]
 binding = "CONFIG"
-id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"
+id = "3d1b1f87e909430394cbf30ce7717603"
 
 [[env.preview.r2_buckets]]
 binding = "FILES"
@@ -52,12 +52,12 @@ vars = { APP_ENV = "production", TURNSTILE_SITE_KEY = "" }
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "cf_ai_site_db"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "389d0759-f92e-4433-9863-a3876c0b0042"
 migrations_dir = "migrations"
 
 [[env.production.kv_namespaces]]
 binding = "CONFIG"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "324f4a63c0d646fc93fa6d82bdeb82bb"
 
 [[env.production.r2_buckets]]
 binding = "FILES"
